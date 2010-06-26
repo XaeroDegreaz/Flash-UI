@@ -1,0 +1,1 @@
+Main.as is only used as an example of how to initialize a TabbedScrollPane clip.
