@@ -1,0 +1,27 @@
+<menu>
+
+	<item label="Main1" action="">
+		<item label="Sub1" action="s111"/>
+	</item>
+	
+	<item label="Main2" action="">
+	
+		<item label="Sub1" action="">
+			<item label="Sub1-1" action="222"/>
+			<item label="Sub1-2" action="333"/>
+			<item label="Sub1-3" action="444"/>
+		</item>
+		
+		<item label="Sub2" action="">
+			<item label="Sub2-1" action="555"/>
+			<item label="Sub2-2" action="6666"/>
+			<item label="Sub2-3" action="777"/>
+		</item>
+		
+		<item label="Sub3" action="888"/>
+		
+	</item>
+	
+	<item label="woops" func="trace" params="{param1:'booya'}"/>
+</menu>
+		
