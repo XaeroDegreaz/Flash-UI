@@ -21,9 +21,16 @@ package net.jerome.ui {
 		 * Create a TabbedScrollPane object. It has all of the functionality of the
 		 * standard ScrollPane component, but has tabs to control the content.
 		 * */
-		public function TabbedScrollPane($width:Number, $height:Number) {
+		private var paddingTop:Number;
+		private var paddingLeft:Number;
+		public function TabbedScrollPane($width:Number, $height:Number, $paddingTop:Number = 0, $paddingLeft:Number = 0, hScroll:String = "auto", vScroll:String = "auto") {
+			
+			paddingTop = $paddingTop;
+			paddingLeft = $paddingLeft;
 			
 			scrollpane_mc.setSize($width, $height);
+			scrollpane_mc.horizontalScrollPolicy = hScroll;
+			scrollpane_mc.verticalScrollPolicy = vScroll;
 			separator_mc.width = scrollpane_mc.width;
 			
 			TabbedScrollPaneTab.dimensions.width = $width;
@@ -128,8 +135,8 @@ package net.jerome.ui {
 		 */		
 		private function setContent(src:DisplayObject):void {
 			scrollpane_mc.source = src;
-			scrollpane_mc.content.x += 10;
-			scrollpane_mc.content.y += 10;
+			scrollpane_mc.content.x += paddingLeft;
+			scrollpane_mc.content.y += paddingTop;
 			
 			content = scrollpane_mc.content;
 		}
@@ -155,11 +162,11 @@ package net.jerome.ui {
 			for(var i in tabList) {
 				var tab:TabbedScrollPaneTab = tabList[i];
 				
-				if(_data.label == label) {
-					return tab;
+				if(tab._data.label == label) {
+					break;
 				}
 			}
-			
+			return tab;
 		}
 		
 	}

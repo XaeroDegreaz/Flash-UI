@@ -13,7 +13,7 @@ package net.jerome.ui {
 		/**
 		 *The data object used in the contructor 
 		 */		
-		private var _data:Object;
+		public var _data:Object;
 		/**
 		 *The DisplayObject to display in the ScrollPane component when this tab's _state is active. 
 		 */		
@@ -49,8 +49,10 @@ package net.jerome.ui {
 		 * 
 		 */		
 		private function init(e:Event):void {
+			trace("Tab label: "+_data.label);
 			label_txt.autoSize = TextFieldAutoSize.CENTER;	
-			label_txt.text = _data.label;			
+			label_txt.text = _data.label;
+			trace("label_txt: "+label_txt.text);
 			label_txt.mouseEnabled = false;
 			
 			if(_data.active) {
